@@ -190,7 +190,7 @@ class OpenChatPageView(View):
            chat.save()
            new_message = Message.objects.create(
                     chat=chat,
-                    sender=User.objects.get(username="a"),
+                    sender=User.objects.get(username="admin"),
                     content="Assalomu alaykum qanday yordam berishimiz mumkin?",
                 )
 
