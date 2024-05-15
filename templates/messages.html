@@ -156,9 +156,9 @@
                                         <input name="submit" type="submit" id="submit" class="axil-button button-rounded" value="Back"></a>
                                     </div>
                                     {% if request.user.is_superuser %}
-                                    <div class="">
+                                    <div class="form-submit">
                                         <a href="{% url 'main:delete_chat' chat.id %}">
-                                        <i class="fa fa-trash"></i>
+                                        <i class="fa fa-trash">Delete This chat</i>
                                         </a>
                                     </div>
                                     {% endif %}
