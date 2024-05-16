@@ -6,7 +6,7 @@ from platform import python_version
 def send_email(subject, message, recipients):
     server = 'server3.ahost.uz'
     user = 'admin@careconnect.uz'
-    password = 'oILx6s-NE)kd'
+    password = '(Oior%&FP*[z'
     sender = 'admin@careconnect.uz'
 
     msg = MIMEMultipart('alternative')
