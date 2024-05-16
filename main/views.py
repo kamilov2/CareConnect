@@ -2,6 +2,8 @@ import telebot
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import View
 from django.contrib import messages
+from django.db.models import Count
+
 from django.contrib.auth.models import User
 from django.contrib.auth import (
  authenticate, login, 
@@ -69,7 +71,7 @@ class SignupView(View):
       profile.save()
       login(request, user)
       messages.success(request, 'Registration successful.')
-      return redirect('main:login')
+      return redirect('main:profile')
   return render(request, 'signup.html')
 
 class LoginView(View):
@@ -190,7 +192,7 @@ class OpenChatPageView(View):
            chat.save()
            new_message = Message.objects.create(
                     chat=chat,
-                    sender=User.objects.get(username="admin"),
+                    sender=User.objects.get(username="a"),
                     content="Assalomu alaykum qanday yordam berishimiz mumkin?",
                 )
 
@@ -345,21 +347,21 @@ class PostsDetailPageView(View):
 class VolonterPageView(View):
     def get(self, request):
         if request.user.is_superuser:
-         user_chats = Chat.objects.all()[:35]
+            user_chats = Chat.objects.annotate(message_count=Count('messages')).filter(message_count__gt=2)[:35]
 
-         chats_with_last_message = []
-         for chat in user_chats:
-             last_message = chat.messages.all().order_by('-timestamp').first()
-             if last_message:
-                 chats_with_last_message.append((chat, last_message))
+            chats_with_last_message = []
+            for chat in user_chats:
+                last_message = chat.messages.all().order_by('-timestamp').first()
+                if last_message:
+                    chats_with_last_message.append((chat, last_message))
 
-         context = {
-             "chats_with_last_message": chats_with_last_message,
-         }
+            context = {
+                "chats_with_last_message": chats_with_last_message,
+            }
 
-         return render(request, "admin.html", context)  
+            return render(request, "admin.html", context)  
         else:
-           return redirect("main:home")
+            return redirect("main:home")
 
     
 class LogoutView(View):
