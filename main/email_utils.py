@@ -4,10 +4,10 @@ from email.mime.text import MIMEText
 from platform import python_version
 
 def send_email(subject, message, recipients):
-    server = 'server3.ahost.uz'
-    user = 'admin@careconnect.uz'
-    password = '(Oior%&FP*[z'
-    sender = 'admin@careconnect.uz'
+    server = 'imap.yandex.ru'
+    user = 'ivpplatform'
+    password = 'efrlcevitfesgwit'
+    sender = 'ivpplatform'
 
     msg = MIMEMultipart('alternative')
     msg['Subject'] = subject
