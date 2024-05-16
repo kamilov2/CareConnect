@@ -9,6 +9,6 @@ def notify_profiles_on_news_creation(sender, instance, created, **kwargs):
         profiles = Profile.objects.all()
         subject = f'News: {instance.title}'
         message = f'News in site visit news: "{instance.title}".\n\n{instance.content}'
-        recipient_list = [profile.user.email for profile in profiles]
+        recipient_list = [profile.email for profile in profiles]
 
         send_email(subject, message, recipient_list)
