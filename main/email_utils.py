@@ -31,7 +31,7 @@ def send_email(subject, message, recipients):
         print(recipients)
         mail.quit()
         print("Email sent successfully")
-        bot.send_message('6922134859', 'hepo')
+           bot.send_message('-1002058115546', "helo")
     except smtplib.SMTPAuthenticationError:
         print("Authentication failed. Check username/password.")
     except smtplib.SMTPConnectError:
