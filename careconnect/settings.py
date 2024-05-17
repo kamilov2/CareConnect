@@ -125,15 +125,13 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.yandex.com'
 EMAIL_PORT = 465  # Correct port for SSL
 EMAIL_USE_TLS = False  # Set to False for SSL on port 465
-EMAIL_USE_SSL = False  # Enable SSL for secure email
+EMAIL_USE_SSL = True  # Enable SSL for secure email
 EMAIL_HOST_USER = 'ivpplatform@yandex.com'
 EMAIL_HOST_PASSWORD = 'efrlcevitfesgwit'
 
 DEFAULT_FROM_EMAIL = 'ivpplatform@yandex.com'
 
 # Additional settings if required
-DEFAULT_FROM_EMAIL = 'ivpplatform@yandex.com'
-# Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "/static/"
