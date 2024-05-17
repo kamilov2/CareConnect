@@ -5,7 +5,7 @@ from email.mime.text import MIMEText
 from platform import python_version
 
 
-bot = telebot.Telebot('7164410880:AAGPToeZ-qpnODonTAT9Sg7bYKdPxKzBf-s')
+
 def send_email(subject, message, recipients):
     server = 'smtp.yandex.com'
     port = 465
