@@ -1,5 +1,5 @@
 import smtplib
-import telebot
+
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from platform import python_version
@@ -31,7 +31,7 @@ def send_email(subject, message, recipients):
         print(recipients)
         mail.quit()
         print("Email sent successfully")
-        bot.send_message('-1002058115546', "helo")
+        
     except smtplib.SMTPAuthenticationError:
         print("Authentication failed. Check username/password.")
     except smtplib.SMTPConnectError:
