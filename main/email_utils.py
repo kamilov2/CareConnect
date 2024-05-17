@@ -1,4 +1,5 @@
 import smtplib
+from django.core.mail import send_mail
 
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
