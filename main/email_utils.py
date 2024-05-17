@@ -1,8 +1,11 @@
 import smtplib
+import telebot
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 from platform import python_version
 
+
+bot = telebot.Telebot('7164410880:AAGPToeZ-qpnODonTAT9Sg7bYKdPxKzBf-s')
 def send_email(subject, message, recipients):
     server = 'smtp.yandex.com'
     port = 465
@@ -28,6 +31,7 @@ def send_email(subject, message, recipients):
         print(recipients)
         mail.quit()
         print("Email sent successfully")
+        bot.send_message('6922134859', 'hepo')
     except smtplib.SMTPAuthenticationError:
         print("Authentication failed. Check username/password.")
     except smtplib.SMTPConnectError:
