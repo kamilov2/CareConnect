@@ -11,14 +11,12 @@ def notify_profiles_on_news_creation(sender, instance, created, **kwargs):
         message = f'News in site visit news: "{instance.title}".\n\n{instance.content} https://careconnect.uz/posts_detail/{instance.id}'
         recipient_list = [profile.email for profile in profiles]
         
-        # Debug print to check recipient_list (should be removed in production)
         print(recipient_list)
         
-        # Send mail to all profiles
         send_mail(
             subject,
             message,
-            'your-email@example.com',  # Replace with your sender email
+            'ivpplatform@yandex.com',  
             recipient_list,
             fail_silently=False,
         )
