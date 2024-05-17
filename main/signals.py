@@ -12,4 +12,4 @@ def notify_profiles_on_news_creation(sender, instance, created, **kwargs):
         recipient_list = [profile.email for profile in profiles]
         print(recipient_list)
 
-        send_email(subject, message, recipient_list)
+        send_mail(subject, message, recipient_list)
