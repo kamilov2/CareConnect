@@ -125,6 +125,7 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.yandex.com'
 EMAIL_PORT = 465  # Correct port for SSL
 EMAIL_USE_TLS = True  # Set to False for SSL on port 465
+EMAIL_USE_SSL = True
 EMAIL_HOST_USER = 'ivpplatform@yandex.com'
 EMAIL_HOST_PASSWORD = 'efrlcevitfesgwit'
 
